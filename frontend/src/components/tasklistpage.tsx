@@ -16,7 +16,7 @@ export default function TaskListPage() {
 
   const fetchTodos = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/todos", {
+    const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/todos`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -98,12 +98,15 @@ export default function TaskListPage() {
 </Button>
 
       </div>
-
+      {todos.length==0?<div className="font-bold ml-80 mt-40">
+        NO TODO'S CREATE TODO
+      </div>:
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filtered.map(todo => (
           <TaskCard key={todo.id} todo={todo} token={token} onUpdate={fetchTodos} />
         ))}
       </div>
+}
     </div>
   );
 }

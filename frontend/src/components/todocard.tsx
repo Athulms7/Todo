@@ -27,7 +27,7 @@ const TodoCard: React.FC<Props> = ({ todo, token, onRefresh }) => {
   });
 
   const updateTodo = async () => {
-    await axios.put(`http://localhost:5000/api/todos/${todo.id}`, {
+    await axios.put(`${import.meta.env.VITE_API_URL}/api/todos/${todo.id}`, {
       ...form,
       status: todo.status,
     }, {
@@ -38,7 +38,7 @@ const TodoCard: React.FC<Props> = ({ todo, token, onRefresh }) => {
   };
 
   const toggleStatus = async () => {
-    await axios.put(`http://localhost:5000/api/todos/${todo.id}`, {
+    await axios.put(`${import.meta.env.VITE_API_URL}/api/todos/${todo.id}`, {
       ...todo,
       status: todo.status === "PENDING" ? "COMPLETED" : "PENDING",
     }, {
@@ -48,7 +48,7 @@ const TodoCard: React.FC<Props> = ({ todo, token, onRefresh }) => {
   };
 
   const deleteTodo = async () => {
-    await axios.delete(`http://localhost:5000/api/todos/${todo.id}`, {
+    await axios.delete(`${import.meta.env.VITE_API_URL}/api/todos/${todo.id}`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     onRefresh();

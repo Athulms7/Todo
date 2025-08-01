@@ -30,7 +30,7 @@ export default function TaskCard({
   const isCompleted = todo.status === "COMPLETED";
 
   const toggleStatus = async () => {
-    await fetch(`http://localhost:5000/api/todos/${todo.id}`, {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/todos/${todo.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ export default function TaskCard({
   };
 
   const deleteTask = async () => {
-    await fetch(`http://localhost:5000/api/todos/${todo.id}`, {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/todos/${todo.id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -55,7 +55,7 @@ export default function TaskCard({
   };
 
   const saveEdit = async () => {
-    await fetch(`http://localhost:5000/api/todos/${todo.id}`, {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/todos/${todo.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -11,7 +11,7 @@ export default function TodoDashboard() {
   const fetchTodos = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/todos", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/todos`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTodos(res.data);

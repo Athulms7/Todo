@@ -12,7 +12,7 @@ export default function AddTaskDialog({ onAdd }: { onAdd: (todo: any) => void })
   const token = localStorage.getItem("token") || "";
 
   const handleSubmit = async () => {
-    const res = await axios.post("http://localhost:5000/api/todos", {
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/todos`, {
       ...form,
       dueDate: form.dueDate ? new Date(form.dueDate).toISOString() : null,
     }, {
