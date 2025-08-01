@@ -8,6 +8,10 @@ from datetime import timedelta
 from models import db, User
 from app.todos import create_todo_blueprint
 import os
+import time
+print("Starting app...")
+start = time.time()
+
 
 load_dotenv()
 
@@ -100,7 +104,10 @@ with app.app_context():
     db.create_all()
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    print("App ready in", time.time() - start, "seconds")
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
 
 
 

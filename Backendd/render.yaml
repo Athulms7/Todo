@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: flask-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python run.py"
+    envVars:
+      - key: DATABASE_URL
+        fromEnvVar: DATABASE_URL
+      - key: JWT_SECRET_KEY
+        fromEnvVar: JWT_SECRET_KEY
+      - key: SEND_EMAIL
+        fromEnvVar: SEND_EMAIL
+      - key: MAIL_PASSWORD
+        fromEnvVar: MAIL_PASSWORD
+      - key: GOOGLE_CLIENT_ID
+        fromEnvVar: GOOGLE_CLIENT_ID
+      - key: GOOGLE_CLIENT_SECRET
+        fromEnvVar: GOOGLE_CLIENT_SECRET
+      - key: APP_SECRET_KEY
+        fromEnvVar: APP_SECRET_KEY
+      - key: SECRET_KEY
+        fromEnvVar: SECRET_KEY       
+

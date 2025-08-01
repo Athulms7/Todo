@@ -1,48 +1,4 @@
 
-
-
-# from flask import Blueprint, request, jsonify
-# from flask_jwt_extended import jwt_required, get_jwt_identity
-# from flask_mail import Message
-# from models import db, Todo, User
-# import os
-
-# def create_todo_blueprint(mail):
-#     todo_bp = Blueprint("todo", __name__)
-
-#     @todo_bp.route("/todos", methods=["GET"])
-#     @jwt_required()
-#     def get_todos():
-#         email = get_jwt_identity()
-#         user = User.query.filter_by(email=email).first()
-#         todos = Todo.query.filter_by(user_id=user.id).all()
-#         return jsonify([{"id": t.id, "text": t.text, "completed": t.completed} for t in todos])
-
-#     @todo_bp.route("/todos", methods=["POST"])
-#     @jwt_required()
-#     def create_todo():
-#         data = request.get_json()
-#         email = get_jwt_identity()
-#         user = User.query.filter_by(email=email).first()
-
-#         new_todo = Todo(text=data["text"], user_id=user.id)
-#         db.session.add(new_todo)
-#         db.session.commit()
-
-#         # ✅ Send Email on Todo Creation
-#         msg = Message(
-#             subject="Todo Created",
-#             sender=os.getenv("SEND_EMAIL"),
-#             recipients=[user.email]
-#         )
-#         msg.body = f"Hello {user.name}, your todo '{new_todo.text}' has been created!"
-#         mail.send(msg)
-
-#         return jsonify({"message": "Todo created"}), 201
-
-#     return todo_bp
-
-
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from flask_mail import Message

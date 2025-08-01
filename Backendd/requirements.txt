@@ -7,4 +7,6 @@ Flask-Mail
 python-dotenv
 psycopg2-binary
 Authlib
+waitress
+Flask-DebugToolbar
 
