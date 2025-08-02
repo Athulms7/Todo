@@ -2,8 +2,8 @@
 import './App.css'
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 
-import Dashboard from './pages/dashboard'
 import LandingPage from './pages/signin'
+import Tasks from './pages/dashboard'
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<LandingPage/>}></Route>
-      <Route path='/dashboard' element={<Dashboard/>}></Route>
+      <Route path='/dashboard' element={<Tasks/>}></Route>
       
       <Route path='*' element={<div>page not found</div>}></Route>
     </Routes>

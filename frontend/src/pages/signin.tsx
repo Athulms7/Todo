@@ -5,6 +5,7 @@ export default function LandingPage() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
+    // ${import.meta.env.VITE_API_URL}
     window.location.href = `${import.meta.env.VITE_API_URL}/login`;
   };
 
