@@ -3,7 +3,7 @@ import NavBar from "@/components/navbar"
 import TaskListPage from "@/components/tasklistpage"
 import { useEffect } from "react";
 
-export default function Tasks() {
+export default function Dashboard() {
   useEffect(()=>{
     console.log("here")
     const params = new URLSearchParams(window.location.search);
