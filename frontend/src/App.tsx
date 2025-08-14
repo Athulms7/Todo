@@ -12,6 +12,7 @@ function App() {
     <Routes>
       <Route path='/' element={<LandingPage/>}></Route>
       <Route path='dashboard' element={<Dashboard/>}></Route>
+      <Route path='/health' element={<div>Health is Okay</div>}></Route>
       <Route path='*' element={<div>page not found</div>}></Route>
     </Routes>
     </BrowserRouter>

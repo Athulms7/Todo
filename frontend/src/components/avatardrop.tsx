@@ -18,11 +18,12 @@ export default function UserDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Avatar className="cursor-pointer">
-          <AvatarImage src="https://github.com/shadcn.png" />
-          <AvatarFallback>U</AvatarFallback>
-        </Avatar>
-      </DropdownMenuTrigger>
+  <Avatar className="cursor-pointer">
+    <AvatarImage src="https://github.com/shadcn.png" />
+    <AvatarFallback>U</AvatarFallback>
+  </Avatar>
+</DropdownMenuTrigger>
+
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
       </DropdownMenuContent>
